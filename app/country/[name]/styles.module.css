@@ -1,0 +1,20 @@
+.country_page b {
+  font-weight: 600;
+}
+
+.country_page p {
+  margin: 0.5rem 0;
+}
+
+.country_page .border_countries {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .country_page .secundary_data {
+    margin-top: 2rem;
+  }
+}
