@@ -1,3 +1,4 @@
 import { CountryCard } from "./country-card";
+import { MainHeader } from "./layout";
 
-export { CountryCard };
+export { CountryCard, MainHeader };

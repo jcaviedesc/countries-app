@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
+import { MainHeader } from "./_components";
 
 const nunitoSans = Nunito_Sans({
   weight: ["300", "600", "800"],
@@ -19,7 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={nunitoSans.className}>{children}</body>
+      <body className={nunitoSans.className}>
+        <MainHeader />
+        <main className="mx-auto max-w-7xl px-4 mt-16">{children}</main>
+      </body>
     </html>
   );
 }
