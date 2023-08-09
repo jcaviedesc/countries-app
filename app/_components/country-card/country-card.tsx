@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 type CountryCardProps = {
   /**
@@ -21,15 +22,17 @@ function CountryCard({
 }: CountryCardProps) {
   return (
     <div className={styles.country_card}>
-      <div className="h-36 overflow-hidden">
-        <Image
-          src={flag}
-          alt={name}
-          width={300}
-          height={200}
-          className="object-cover w-full h-full"
-        />
-      </div>
+      <Link href={`/country/${name.toLowerCase()}`}>
+        <div className="h-36 overflow-hidden">
+          <Image
+            src={flag}
+            alt={name}
+            width={300}
+            height={200}
+            className="object-cover w-full h-full"
+          />
+        </div>
+      </Link>
       <div className={styles.country_card_body}>
         <h2 className={styles.country_card_name}>{name}</h2>
         <div className={styles.country_card_bodydata}>

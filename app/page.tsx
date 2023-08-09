@@ -10,7 +10,7 @@ export default async function Home() {
         <CountryCard
           key={`${name}`}
           flag={flags.png}
-          name={name.official}
+          name={name.common}
           capital={capital?.length > 0 ? capital[0] : ""}
           {...restCountryData}
         />
