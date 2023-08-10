@@ -59,3 +59,18 @@ export async function getCountyByName(
 
   return data;
 }
+
+export async function searchCountriesByName(
+  name: string
+): Promise<BasicCountry[]> {
+  const res = await fetch(
+    `${REST_COUNTRIES_URL}/name/${name}?fields=${DEFAULT_LIST_FIELDS.join(",")}`
+  );
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error(`Failed to fetch search countries data with name ${name}`);
+  }
+
+  return res.json();
+}

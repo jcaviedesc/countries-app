@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getAllContries } from "../services/restcountries";
 import { CountryCard } from "@/components/country-card";
 

@@ -1,4 +1,5 @@
 import ColorScheme from "./color-scheme";
+import Filters from "./filters";
 import Search from "./search";
 
 function Header() {
@@ -12,9 +13,9 @@ function Header() {
           <ColorScheme />
         </div>
       </div>
-      <div className="mx-auto max-w-7xl  mt-16">
+      <Filters>
         <Search />
-      </div>
+      </Filters>
     </header>
   );
 }
