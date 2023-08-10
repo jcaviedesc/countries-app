@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getAllContries } from "../services/restcountries";
-import { CountryCard } from "./_components";
+import { CountryCard } from "@/components/country-card";
 
 export default async function Home() {
   const countries = await getAllContries();
