@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Screenshots
+
+![desktop-design-home-dark](/design/desktop-design-home-dark.jpg)
+
+![desktop-design-detail-light](/design/desktop-design-detail-light.jpg)
+
+see more in [design folder](/design)
+
 ## Getting Started
 
 First, run the development server:
@@ -32,3 +40,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Arquitecture
+
+In the app folder there is code relate to nextjs pages and layouts and out of folder in component there are client and server componentes and /services folder there is restclient service to fetch countries using restcountries api
+
+## Challenges
+
+search countries was resolved using a layout and search component that navigate to /search route with `q` params and this param is used to fetch countries by `q` param. This strategy was used also to do the region filter.
