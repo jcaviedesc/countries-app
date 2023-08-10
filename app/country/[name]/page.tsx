@@ -20,7 +20,7 @@ export default async function CountryPage({
 
   return (
     <div
-      className={`mt-16 flex flex-row justify-between lg:gap-32 flex-wrap ${styles.country_page}`}
+      className={`mt-16 flex flex-row justify-between lg:gap-32 ${styles.country_page}`}
     >
       <div>
         <Image
@@ -31,8 +31,8 @@ export default async function CountryPage({
         />
       </div>
 
-      <div className="grow">
-        <h1 className="text-black text-2xl font-extrabold my-8 capitalize">
+      <div className={styles.country_data}>
+        <h1 className="text-black text-2xl font-extrabold my-8 capitalize dark:text-white">
           {countryData.name.common}
         </h1>
         <div className="flex flex-row justify-between flex-wrap">
@@ -68,12 +68,12 @@ export default async function CountryPage({
         </div>
 
         <div className={styles.border_countries}>
-          <b className="mr-4">Border Countries:</b>
-          <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
+          <b className="mr-4 mb-6">Border Countries:</b>
+          <div className="flex flex-wrap gap-2">
             {countryData.borders.map((borderCountry) => (
               <div
                 key={borderCountry}
-                className="flex items-center space-x-2 bg-white shadow-md px-4 py-1 rounded"
+                className="flex items-center space-x-2 bg-white shadow-md px-4 py-1 rounded dark:bg-dark-blue"
               >
                 <span>{borderCountry}</span>
               </div>

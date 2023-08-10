@@ -13,8 +13,20 @@
   margin-top: 2rem;
 }
 
+.country_page .country_data {
+  margin: 0 2rem;
+}
+
 @media only screen and (max-width: 767px) {
+  .country_page {
+    flex-wrap: wrap;
+  }
+
   .country_page .secundary_data {
     margin-top: 2rem;
+  }
+
+  .country_page .country_data {
+    margin: 0;
   }
 }

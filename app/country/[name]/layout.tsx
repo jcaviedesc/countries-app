@@ -11,7 +11,7 @@ export default function CountryLayout({
     <div>
       <div>
         <Link href="/">
-          <button className="flex items-center space-x-2 bg-white shadow-md px-4 py-2 rounded">
+          <button className="flex items-center space-x-2 bg-white shadow-md px-4 py-2 rounded dark:bg-dark-blue">
             <FontAwesomeIcon icon={faArrowLeft} />
             <span>Back</span>
           </button>
