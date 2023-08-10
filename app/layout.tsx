@@ -3,7 +3,10 @@ import type { Metadata } from "next";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Nunito_Sans } from "next/font/google";
-import MainHeader from "../components/layout/header";
+import Header from "../components/layout/header";
+import Filters from "../components/layout/header/filters";
+import Search from "../components/layout/header/search";
+import Dropdown from "../components/layout/header/dropdown";
 
 config.autoAddCss = false;
 
@@ -25,7 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunitoSans.className}>
-        <MainHeader />
+        <Header />
+        <Filters>
+          <Search />
+          <Dropdown />
+        </Filters>
         <main className="mx-auto max-w-7xl px-4 mt-16">{children}</main>
       </body>
     </html>

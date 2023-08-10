@@ -10,6 +10,8 @@ export default function Filters({ children }: { children: React.ReactNode }) {
     pathname.includes(route)
   );
   return isHiidenComponent ? null : (
-    <div className="mx-auto max-w-7xl px-4 mt-16">{children}</div>
+    <div className="mx-auto max-w-7xl px-4 mt-16 flex flex-row justify-between">
+      {children}
+    </div>
   );
 }

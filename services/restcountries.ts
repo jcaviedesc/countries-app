@@ -60,17 +60,52 @@ export async function getCountyByName(
   return data;
 }
 
-export async function searchCountriesByName(
-  name: string
-): Promise<BasicCountry[]> {
-  const res = await fetch(
-    `${REST_COUNTRIES_URL}/name/${name}?fields=${DEFAULT_LIST_FIELDS.join(",")}`
-  );
+type SearchCountriesParams = {
+  name?: string;
+  region?: string;
+};
+
+const SEARCH_ENDPOINT = {
+  name: `${REST_COUNTRIES_URL}/name`,
+  region: `${REST_COUNTRIES_URL}/region`,
+  all: `${REST_COUNTRIES_URL}/all`,
+};
+
+function buidlSearchEndpint({ name, region }: SearchCountriesParams) {
+  if (name) {
+    return `${SEARCH_ENDPOINT.name}/${name}`;
+  }
+
+  if (region) {
+    return `${SEARCH_ENDPOINT.region}/${region}`;
+  }
+
+  return SEARCH_ENDPOINT.all;
+}
+
+export async function searchCountries({
+  name,
+  region,
+}: SearchCountriesParams): Promise<BasicCountry[]> {
+  const endpint = `${buidlSearchEndpint({
+    name,
+    region,
+  })}?fields=${DEFAULT_LIST_FIELDS.join(",")}`;
+
+  console.log(endpint);
+
+  const res = await fetch(endpint);
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error(`Failed to fetch search countries data with name ${name}`);
   }
 
-  return res.json();
+  let countries = (await res.json()) as BasicCountry[];
+  // there is no endpint to filter by name and region in restcountries
+  if (region) {
+    countries = countries.filter((country) => country.region === region);
+  }
+
+  return countries;
 }

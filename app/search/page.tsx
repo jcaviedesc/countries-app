@@ -1,14 +1,14 @@
 import { CountryCard } from "../../components";
-import { searchCountriesByName } from "../../services/restcountries";
+import { searchCountries } from "../../services/restcountries";
 
 export default async function SearchPage({
   searchParams,
 }: {
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-  const { q: searchValue } = searchParams as { [key: string]: string };
+  const { q: searchValue, region } = searchParams as { [key: string]: string };
 
-  const countries = await searchCountriesByName(searchValue);
+  const countries = await searchCountries({ name: searchValue, region });
   const resultsText = countries.length > 1 ? "results" : "result";
 
   return (
